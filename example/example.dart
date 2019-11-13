@@ -2,7 +2,7 @@ library example;
 
 import 'package:built_redux/built_redux.dart';
 import 'package:flutter_built_redux/flutter_built_redux.dart';
-import 'package:flutter/material.dart' hide Builder;
+import 'package:flutter/material.dart' hide Builder, ActionDispatcher;
 import 'package:built_value/built_value.dart';
 
 part 'example.g.dart';
@@ -77,8 +77,7 @@ class CounterWidget extends StoreConnector<Counter, CounterActions, int> {
   int connect(Counter state) => state.count;
 
   @override
-  Widget build(BuildContext context, int count, CounterActions actions) =>
-      new Scaffold(
+  Widget build(BuildContext context, int count, CounterActions actions) => new Scaffold(
         body: new Row(
           children: <Widget>[
             new RaisedButton(
@@ -93,9 +92,8 @@ class CounterWidget extends StoreConnector<Counter, CounterActions, int> {
 
 // Built redux counter state, actions, and reducer
 
-ReducerBuilder<Counter, CounterBuilder> reducerBuilder =
-    new ReducerBuilder<Counter, CounterBuilder>()
-      ..add(CounterActionsNames.increment, (s, a, b) => b.count++);
+ReducerBuilder<Counter, CounterBuilder> reducerBuilder = new ReducerBuilder<Counter, CounterBuilder>()
+  ..add(CounterActionsNames.increment, (s, a, b) => b.count++);
 
 abstract class CounterActions extends ReduxActions {
   factory CounterActions() => new _$CounterActions();
