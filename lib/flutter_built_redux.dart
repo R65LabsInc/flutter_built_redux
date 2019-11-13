@@ -4,6 +4,8 @@ import 'package:meta/meta.dart';
 import 'package:flutter/widgets.dart' hide Builder;
 import 'package:built_redux/built_redux.dart';
 
+export 'store_sub_connection.dart';
+
 /// [Connect] maps state from the store to the local state that a give
 /// component cares about
 typedef LocalState Connect<StoreState, LocalState>(StoreState state);

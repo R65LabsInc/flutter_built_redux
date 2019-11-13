@@ -1,9 +1,8 @@
 import 'package:built_redux/built_redux.dart';
 import 'package:built_value/built_value.dart';
 import 'package:flutter/material.dart' hide Builder;
-import 'package:flutter_built_redux/flutter_built_redux.dart';
 
-export 'store_sub_connection.dart';
+import 'flutter_built_redux.dart';
 
 class StoreSubConnection<
     StoreState extends Built<StoreState, StoreStateBuilder>,
